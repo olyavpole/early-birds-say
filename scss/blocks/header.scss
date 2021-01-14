@@ -1,0 +1,335 @@
+.header {
+    position: relative;
+    height: 100vh;
+    max-height: 924px;
+    background-image: url(../images/lena.jpg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media (max-width: 850px) {
+        background-position: center center;
+    }
+
+    @media (max-width: 650px) {
+        background-attachment: unset;
+    }
+
+    &__top-inner {
+        position: relative;
+        min-height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 650px) {
+            min-height: 100px;
+        }
+    }
+
+    &__logo {
+        display: block;
+
+        @media (max-width: 650px) {
+            width: 225px;
+        }
+    }
+
+    &__top-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90px;
+        align-items: flex-end;
+    }
+
+    &__socials {
+        text-align: right;
+
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        margin-bottom: 70px;
+        background-color: rgba(26, 70, 62, 0.3);
+        color: $grey;
+
+        @media (max-width: 850px) {
+            background-color: transparent;
+        }
+
+        @media (max-width: 650px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__phone {
+
+        @media (max-width: 650px) {
+            font-size: 0;
+        }
+    }
+
+    &__phone-link{
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 650px) {
+            position: absolute;
+            z-index: 3;
+            top: 40px;
+            right: 0;        
+            width: 35px;
+            height: 35px;
+            background-image: url(../images/icons/phone.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__email {
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+
+    &__email-link{
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__burger {
+        position: absolute;
+        z-index: 5;
+        left: 18px;
+        top: 8px;
+        width: 30px;
+        height: 30px;
+
+        & span {
+            display: none;
+            width: 100%;
+            height: 2px;
+            margin-bottom: 4px;
+            background-color: rgb(32, 44, 44);
+
+            transition: all 0.3s;
+
+            @media (max-width: 850px) {
+                display: block;
+            }
+        }
+    }
+
+    &__burger.active span {
+
+        position: relative;
+        transition: all 0.3s;
+
+        &:first-child {
+            top: 12px;
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            transform: scale(0);
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .menu {
+        padding: 5px 0 5px 20px;
+        font-size: 16px;
+
+        &__list {
+
+            @media (max-width: 850px) {
+                position: absolute;
+                z-index: 4;
+                top: -10px;
+                left: 10px;
+                width: 70%;
+                padding: 5px 25px 5px 55px;
+                background-color: #efefef;
+                transform: translateX(-200%);
+
+                transition: all 0.5s;
+            }
+        }
+
+        &__list.active {
+
+            @media (max-width: 850px) {
+                transform: translateX(0);
+                transition: all 0.5s;
+            }
+        }
+
+        &__item {
+            display: inline-block;
+
+            & + .menu__item {
+                margin-left: 22px;
+
+                @media (max-width: 850px) {
+                    margin: 0;
+                }
+            }
+
+            @media (max-width: 850px) {
+                display: block;
+            }
+        }
+
+        &__link {
+            letter-spacing: 2px;
+            color: $grey;
+
+            transition: all 0.3s;
+
+            @media (max-width: 850px) {
+                padding: 10px 10px 10px 2px;
+                font-size: 21px;
+                color: #202c2c;
+            }
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    &__content {
+        @media (max-width: 650px) {
+            padding: 30px 0 0 0;
+        }
+    }
+
+    &__inner {
+        width: 50%;
+
+        @media (max-width: 650px) {
+            position: relative;
+            height: calc(100vh - 160px);
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        font-family: 'AmaticSC', cursive;
+        line-height: 80px;
+        font-size: 60px;
+
+        @media (max-width: 950px) {
+            margin-bottom: 15px;
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        @media (max-width: 650px) {
+            margin-bottom: 30px;
+            width: 50%;
+            font-size: 37px;
+            line-height: 56px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 30px;
+
+        @media (max-width: 950px) {
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+
+        @media (max-width: 650px) {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+            white-space: nowrap;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        z-index: 5;
+        bottom: 4px;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        background-image: url(../images/icons/chevron-down.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        outline: none;
+        opacity: 0.6;
+        cursor: pointer;
+        transform: translateX(-50%);
+
+        transition: all 0.3s;
+
+        &:hover {
+            bottom: 0;
+            opacity: 1;
+        }     
+    }
+}
+
+.socials {
+
+    &__item {
+        display: inline-block;
+        opacity: 0.7;
+
+        transition: all 0.3s;
+
+        & + .socials__item {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+    }
+
+    &__link {
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &--youtube {
+            background-image: url(../images/icons/youtube-icon.svg);
+        }
+
+        &--instagram {
+            background-image: url(../images/icons/instagram-icon.svg);
+        }
+
+        &--vk {
+            background-image: url(../images/icons/vk-icon.svg);
+        }
+    }
+}

@@ -1,0 +1,193 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.page {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__content {
+        flex: 1 0 auto;
+    }
+
+    &__btn {
+        position: fixed;
+        z-index: 5;
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url(../images/icons/chevron-down2.svg);
+        background-color: rgba(211, 211, 211, 0.4);
+        background-size: 43px;
+        background-position: center;
+        background-repeat: no-repeat;
+        outline: none;
+        cursor: pointer;
+        transform: rotate(180deg);
+
+        transition: all 0.3s;
+
+        &:hover {
+            bottom: 15px;
+            background-color: rgba(211, 211, 211, 0.7);
+        }
+        
+        @media (max-width: 650px) {
+            width: 40px;
+            height: 40px;
+            background-size: 30px;
+        }
+    }
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.container {
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #243532;
+}
+
+.section {
+    padding: 100px 0;
+
+    @media (max-width: 650px) {
+        padding: 50px 0;
+    }
+}
+
+.title {
+    font-family: 'DancingScript', cursive;
+    font-size: 43px;
+
+    @media (max-width: 650px) {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+.text {
+    font-size: 21px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.subtitle {
+    margin-bottom: 50px;
+    padding-left: 300px;
+    text-align: left;
+    font-size: 19px;
+    font-weight: 400;
+
+    @media (max-width: 650px) {
+        margin-bottom: 30px;
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    transition: all 0.5s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        transform: translateY(-5px);
+    }
+}
+
+.slick-arrow {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.slick-dots {
+    text-align: center;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.slick-dots li.slick-active button {
+    background-color: $dark-grey;
+    outline: transparent;
+}
+
+.slick-dots button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    font-size: 0;
+    background-color: $grey;
+    outline: transparent;
+}
